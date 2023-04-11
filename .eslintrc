@@ -1,0 +1,11 @@
+{
+  "env": {
+      "es6": true,
+      "browser": true
+  },
+  "extends": [
+      "airbnb/base",
+      "plugin:cypress/recommended"
+  ],
+  "rules": {}
+}
