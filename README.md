@@ -2,6 +2,18 @@
 
 Monorepo Control is a command-line tool that simplifies the process of managing monorepos by automating tasks, such as running pre-commit hooks for modified packages. It's designed to work with Husky and other Git hooks tools.
 
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+  - [Add Monorepo Control to your PATH](#add-monorepo-control-to-your-path)
+  - [Standalone usage](#standalone-usage)
+- [Usage](#usage)
+  - [Integration with pre-commit hook](#integration-with-pre-commit-hook)
+    - [Global installation (added to PATH)](#global-installation-added-to-path)
+    - [Standalone installation](#standalone-installation)
+- [Contributing](#contributing)
+- [License](#license)
 ## Features
 
 - Automatically detects modified packages and runs pre-commit hooks.
@@ -82,11 +94,7 @@ For standalone usage, you can place the compiled binary and the configuration fi
    monorepo-ctrl scopeName --config path/to/config/file.json
    ```
 
-   If Monorepo Control is not in your PATH and you have the compiled binary in the `.husky` directory, you can run it like this:
-
-   ```
-   ./.husky/monorepo-ctrl scopeName
-   ```
+   If Monorepo Control is not in your PATH and you have to add the binary and the `mnk-config.json` file to the `.husky` directory, you can run it in standalone mode without adding it to the PATH.
 
 ### Integration with pre-commit hook
 
