@@ -19,3 +19,4 @@ cypress/videos/
 cypress/screenshots/
 lighthouse-report.html
 *.min.*
+monorepo-ctrl
