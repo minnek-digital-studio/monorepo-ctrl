@@ -93,10 +93,10 @@ func checkCommand(name string) string {
 }
 
 // Read and parse the mnk-config.json file
-func readConfig() Configuration {
-    configFile, err := os.Open("mnk-config.json")
+func readConfig(_configFile string) Configuration {
+    configFile, err := os.Open(_configFile)
     if err != nil {
-        fmt.Println("Error: Could not open mnk-config.json.")
+        fmt.Println("Error: Could not open " + _configFile)
         os.Exit(1)
     }
     defer configFile.Close()
@@ -136,8 +136,8 @@ func getModifiedFiles() []string {
     return files
 }
 
-func Init(command string) {
-    config := readConfig()
+func Init(command string, configFile string) {
+    config := readConfig(configFile)
 
     workspaces := config.MonorepoCtrl.Global.Workspaces
     extensions := config.MonorepoCtrl.Global.Extensions
