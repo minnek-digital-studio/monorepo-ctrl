@@ -32,6 +32,6 @@ func Execute() {
 }
 
 func init() {
-	rootCmd.SetVersionTemplate("cominnek {{.Version}}\n")
+	rootCmd.SetVersionTemplate("monorepo-ctrl {{.Version}}\n")
 	rootCmd.VersionTemplate()
 }
