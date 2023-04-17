@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/minnek-digital-studio/monorepo-ctrl/pkg/shell"
+	mnkShellExec "github.com/minnek-digital-studio/mnk-shell-exec"
 )
 
 // Configuration struct to hold the mnk-config.json content
@@ -71,7 +71,7 @@ var checkFunc = `check_command() {
 // Function to check if a command exists
 func checkCommand(name string) string {
 	command := checkFunc + "; check_command \"" + name + "\""
-	out, errout, err := shell.Out(command)
+	out, errout, err := mnkShellExec.Out(command)
 
 	if err != nil {
 		fmt.Println(out)
@@ -81,7 +81,7 @@ func checkCommand(name string) string {
 
 	if strings.Contains(out, "true") {
 		fmt.Printf("Running %s\n", name)
-		_, _, err = shell.OutLive(name)
+		_, _, err = mnkShellExec.OutLive(name)
 		if err != nil {
 			os.Exit(1)
 		}
